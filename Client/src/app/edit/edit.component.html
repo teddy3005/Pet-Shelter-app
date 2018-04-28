@@ -1,0 +1,24 @@
+<a [routerLink]="['']">Home</a>
+<h3>Edit this pet</h3>
+<p style="color:red;font-weight:bold" *ngIf = "(error)"> {{error}}</p>
+
+<form (submit) = "changePet()"  *ngIf = "(editPet)" >
+    Name: <input type="text" name="editPet.name" [(ngModel)]= "editPet.name"/><br>
+    Type: <input type="text" name="editPet.type"[(ngModel)]= "editPet.type"/><br>
+    Description: <input type="text" name="editPet.desc"[(ngModel)]= "editPet.desc"/> 
+    <hr>
+    
+    <p>Skills(Optional):</p>
+      <p>Skill 1:</p>
+      <input type="text" name="editPet.skill1" [(ngModel)]="editPet.skill1" />
+      <p>Skill 2:</p>
+      <input type="text" name="editPet.skill2" [(ngModel)]="editPet.skill2" />
+      <p>Skill 3:</p>
+      <input type="text" name="editPet.skill3" [(ngModel)]="editPet.skill3" />
+    
+    <input type="submit" value="Edit Pet!"/>
+    
+   
+</form>
+
+<button [routerLink]="['']">Cancel</button>
